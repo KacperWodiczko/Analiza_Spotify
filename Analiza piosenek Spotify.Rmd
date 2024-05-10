@@ -1,0 +1,44 @@
+---
+title: "Analiza piosenek Spotify"
+author: "Kacper Wodiczko"
+date: "2024-02-16"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Analiza najpopularniejszych piosenek na Spotify w 2023.
+
+Celem mojej analizy jest odpowiedź na następujące pytania:
+1. Kto jest  najpopularniejszym(ą) artyst(k)ą w 2023 wedle liczby odtworzeń ich piosenek? --> The Weeknd
+2. Kto jest  najpopularniejszym(ą) artyst(k)ą w 2023 wedle liczby piosenek, któr  znalazły się w danych? --> Taylor Swift
+3. Jak korelują ze sobą poszczególne zmienne w danych m.in. pozycja w rankingach sewisów streamingowych: Spotify, Apple Music i Deezer? --> Pozytywnie, wysoka korelacja.
+4. Piosenki w której tonacji mają największą liczbę odtworzeń? --> C# 
+
+## OCZYSZCZANIE I EKSPLORACJA
+
+Wczytanie zbioru danych o piosenkach Spotify. 
+
+```{r spotify}
+spotify <- read.csv("/Users/kacperwodiczko/Downloads/spotify-2023.csv", header = TRUE, sep = ",", stringsAsFactors = TRUE)
+```
+
+Przegląd danych. 
+Użycie funkcji View() na zbiorze danych.
+
+```{r}
+View(spotify)
+```
+
+### Podsumowanie:
+ 
+head() i tail() - początek i koniec
+
+```{r}
+head(spotify, 5)
+tail(spotify, 5)
+```
